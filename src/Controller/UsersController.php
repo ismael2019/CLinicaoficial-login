@@ -18,6 +18,9 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
+       public $paginate = [
+       'limit' => 5
+    ];
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -30,6 +33,10 @@ class UsersController extends AppController
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
+    }
+    public function bienvenido(){
+        $this->viewBuilder()->layout('admin');
+        
     }
 
     /**
@@ -127,18 +134,18 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                $this->Flash->success(('Inicio de sesion correctamente'));
+                $this->Flash->correcto(('Inicio sesion correctamente.'));
                 return $this->redirect($this->Auth->redirectUrl());
                 
 
             }
-            $this->Flash->error(('Correo o contraseña incorrectos! verifique'));
+            $this->Flash->incorrecto(('verifique sus datos.'));
         }
     }
 
     public function logout()
     {
-        $this->Flash->success(('Cerro sesion correctamente'));
+        $this->Flash->cerrar(('Cerraste sesion correctamente.'));
         return $this->redirect($this->Auth->logout());
     }
 

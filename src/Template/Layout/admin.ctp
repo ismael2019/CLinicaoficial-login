@@ -219,9 +219,9 @@
       </ul>
     </div>
   </nav>
-      <?= $this->Flash->render() ?>
+      
   <div class="content-wrapper">
-
+      <?= $this->Flash->render() ?>
      <?= $this->fetch('content') ?>
     <div>
        

@@ -48,11 +48,11 @@ class AppController extends Controller
             'authorize' => ['Controller'],
             'loginRedirect' => [
                 'controller' => 'Users',
-                'action' => 'index'
+                'action' => 'bienvenido'
             ],
             'logoutRedirect' => [
-                'controller' => 'Pages',
-                'action' => 'home'
+                'controller' => 'Users',
+                'action' => 'login'
                 
             ],
             'authenticate' => [
@@ -78,6 +78,11 @@ class AppController extends Controller
     // Default deny
     return true;
 }
+public function beforeFilter(Event $event)
+    {
+        $this->Auth->allow(['login']);
+        $this->set('current_user', $this->Auth->user());
+    }
     
     /**
      * Before render callback.

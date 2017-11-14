@@ -31,9 +31,9 @@
                 <td><?= h($user->role) ?></td>
                
                 <td class="actions">
-                    <?= $this->Html->link(('Mostrar'), ['action' => 'view', $user->id] ,['class'=>'btn btn-info']) ?>
-                    <?= $this->Html->link(('Editar'), ['action' => 'edit', $user->id],['class'=>'btn btn-success']) ?>
-                    <?= $this->Form->postLink(('Borrar'), ['action' => 'delete', $user->id],['class'=>'btn btn-danger'], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                    <?= $this->Html->link(('<i class="fa fa-eye" aria-hidden="true"></i>'), ['action' => 'view', $user->id] ,['class'=>'btn btn-info','escape'=>false]) ?>
+                    <?= $this->Html->link(('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'), ['action' => 'edit', $user->id],['class'=>'btn btn-success','escape'=>false]) ?>
+                    <?= $this->Form->postLink(('<i class="fa fa-trash" aria-hidden="true"></i>'), ['action' => 'delete', $user->id],['class'=>'btn btn-danger','escape'=>false], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -41,17 +41,18 @@
     </table>  
           </div>
         </div>
-        
+  <center>      
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->first('<< ' . __('Primero')) ?>
+            <?= $this->Paginator->prev('< ' . __('Anterior')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
+            <?= $this->Paginator->last(__('Ultimo') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, mostrando {{current}} usuario(s) de {{count}}')]) ?></p>
     </div>
+    </center>
 </div>
 </div>
 </div>
