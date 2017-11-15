@@ -18,62 +18,59 @@
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">Clinica Dental</a>
+    <button id="boton" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="fa fa-bars" aria-hidden="true"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+      <ul class="imagen navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="index.html">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <i class="fa fa-address-card" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Lista de Usuarios</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Charts</span>
+            <i class="fa fa-stethoscope" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Lista de Pacientes</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="tables.html">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Tables</span>
+            <i class="fa fa-list-ol" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Lista de Historiales Clinicos</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="tables.html">
+            <i class="fa fa-list-ol" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Lista de Recetas Medicas</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Components</span>
+            <i class="fa fa-wheelchair" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Pacientes</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Navbar</a>
-            </li>
-            <li>
-              <a href="cards.html">Cards</a>
+              <a href="navbar.html">Agregar nuevo paciente</a>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
+            <i class="fa fa-heartbeat" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Tratamientos</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Login Page</a>
+              <a href="login.html">Agregar nuevo tratamiento</a>
             </li>
             <li>
-              <a href="register.html">Registration Page</a>
-            </li>
-            <li>
-              <a href="forgot-password.html">Forgot Password Page</a>
-            </li>
-            <li>
-              <a href="blank.html">Blank Page</a>
+              <a href="register.html">Lista de tratamientos</a>
             </li>
           </ul>
         </li>
@@ -122,7 +119,7 @@
           </a>
         </li>
       </ul>
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto" id="menumensajes">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-fw fa-envelope"></i>
@@ -139,22 +136,22 @@
             <a class="dropdown-item" href="#">
               <strong>David Miller</strong>
               <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
+              <div class="dropdown-message small" id="textopeque">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <strong>Jane Smith</strong>
               <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
+              <div class="dropdown-message small" id="textopeque">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">
               <strong>John Doe</strong>
               <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
+              <div class="dropdown-message small" id="textopeque">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all messages</a>
+            <a id="texto2" class="dropdown-item small" href="#">View all messages</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -228,37 +225,19 @@
     </div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
-    <footer class="sticky-footer">
+    <footer class="sticky-footer" id="pie">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2017</small>
+          <small id="pieletra">Clinica Dental DFVD 2017</small>
         </div>
       </div>
     </footer>
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded" href="#page-top" id="que">
       <i class="fa fa-angle-up"></i>
     </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+</div>
 
     
 
