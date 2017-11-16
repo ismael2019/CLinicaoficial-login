@@ -16,6 +16,7 @@ class CreateConsultationsTable extends AbstractMigration
         $table->addColumn('diagnosis', 'string')
               ->addColumn('detail', 'string')
               ->addColumn('active', 'boolean')
+              ->addColumn('payment_type', 'enum', array('values' => 'cash, dues'))
               ->addColumn('created','datetime')
               ->addColumn('modified','datetime')
               ->addColumn('user_id', 'integer', array('signed' => 'disable'))

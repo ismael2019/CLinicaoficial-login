@@ -16,7 +16,6 @@ class CreateTreatmentsTable extends AbstractMigration
         $table->addColumn('name', 'string', array('limit' => 150))
               ->addColumn('description', 'string')
               ->addColumn('total_cost', 'decimal', ['precision' => 5, 'scale' => 2, 'signed' => 'disable'])
-              ->addColumn('payment_type', 'enum', array('values' => 'cash, dues'))
               ->addColumn('created', 'datetime')
               ->addColumn('modified', 'datetime')
               ->create();

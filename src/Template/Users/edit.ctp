@@ -1,6 +1,6 @@
     <div class="container-fluid">
       <ol class="breadcrumb">
-         <h1 class="breadcrumb-item active">Registrar Usuario</h1>
+         <h1 class="breadcrumb-item active">Editar Usuario</h1>
       </ol>
       <div class="row">
         <div class="col-8">

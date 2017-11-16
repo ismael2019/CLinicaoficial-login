@@ -76,11 +76,6 @@ class TreatmentsTable extends Table
             ->requirePresence('total_cost', 'create')
             ->notEmpty('total_cost');
 
-        $validator
-            ->scalar('payment_type')
-            ->requirePresence('payment_type', 'create')
-            ->notEmpty('payment_type');
-
         return $validator;
     }
 }

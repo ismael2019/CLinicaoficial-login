@@ -79,3 +79,22 @@
 #contenido{
   background: #09CCC6;
 }
+#tabla{
+  background: #14F7FF;
+}
+#titulotabla{
+  background: #FFFFFF;
+}
+#tituloproblemas{
+  background: #FFFB02;
+  color: #000000;
+}
+#cuerpoproblemas{
+  background: #14F7FF;
+}
+#tituloestado{
+  background: #03C200;
+}
+#cuerpoestado{
+  background: #4FFF4D;
+}

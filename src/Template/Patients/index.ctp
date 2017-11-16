@@ -32,15 +32,12 @@
                 <td><?= h($patient->ci) ?></td>
                 <td><?= h($patient->email) ?></td>
                 <td>
-               <?= if($patient->gender==='male'){
-                        "Hombre"
-                    else{
-                        "Mujer"
+               <?php if ($patient->gender==='male'){
+                        echo "Hombre";
+                    }else{
+                        echo "Mujer";
                     }
-                 }
-
                 ?>
-                <?= h($patient->gender) ?>
                 </td>
                 <td><?= $this->Number->format($patient->age) ?></td>
                 <td><?= h($patient->phone) ?></td>
@@ -73,7 +70,7 @@
             <?= $this->Paginator->next(__('Siguiente') . ' >') ?>
             <?= $this->Paginator->last(__('Ultimo') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, mostrando {{current}} usuario(s) de {{count}}')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Pagina {{page}} de {{pages}}, mostrando {{current}} Paciente(s) de {{count}}')]) ?></p>
     </div>
     </center>
 

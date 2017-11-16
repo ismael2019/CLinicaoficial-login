@@ -18,6 +18,8 @@ class TreatmentsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.treatments',
         'app.consultations',
+        'app.users',
+        'app.patients',
         'app.recipes'
     ];
 

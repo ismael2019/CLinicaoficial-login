@@ -10,7 +10,6 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property string $description
  * @property float $total_cost
- * @property string $payment_type
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *
@@ -33,7 +32,6 @@ class Treatment extends Entity
         'name' => true,
         'description' => true,
         'total_cost' => true,
-        'payment_type' => true,
         'created' => true,
         'modified' => true,
         'consultations' => true,

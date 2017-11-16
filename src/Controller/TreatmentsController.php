@@ -20,6 +20,7 @@ class TreatmentsController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->layout('admin');
         $treatments = $this->paginate($this->Treatments);
 
         $this->set(compact('treatments'));
@@ -35,6 +36,7 @@ class TreatmentsController extends AppController
      */
     public function view($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $treatment = $this->Treatments->get($id, [
             'contain' => ['Consultations', 'Recipes']
         ]);
@@ -50,6 +52,7 @@ class TreatmentsController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->layout('admin');
         $treatment = $this->Treatments->newEntity();
         if ($this->request->is('post')) {
             $treatment = $this->Treatments->patchEntity($treatment, $this->request->getData());
@@ -73,6 +76,7 @@ class TreatmentsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $treatment = $this->Treatments->get($id, [
             'contain' => []
         ]);

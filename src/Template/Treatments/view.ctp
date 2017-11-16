@@ -4,60 +4,62 @@
  * @var \App\Model\Entity\Treatment $treatment
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Treatment'), ['action' => 'edit', $treatment->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Treatment'), ['action' => 'delete', $treatment->id], ['confirm' => __('Are you sure you want to delete # {0}?', $treatment->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Treatments'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Treatment'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Consultations'), ['controller' => 'Consultations', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Consultation'), ['controller' => 'Consultations', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Recipes'), ['controller' => 'Recipes', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Recipe'), ['controller' => 'Recipes', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="treatments view large-9 medium-8 columns content">
-    <h3><?= h($treatment->name) ?></h3>
-    <table class="vertical-table">
+<div class="container-fluid">
+     
+      <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header"><h3><?= h($treatment->name) ?></h3></div>
+        </div>
+          <div class="card-body">
+          <table class="table table-responsive table-striped table-sm">
         <tr>
-            <th scope="row"><?= __('Name') ?></th>
+            <th>Nombre del tratamiento</th>
             <td><?= h($treatment->name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Description') ?></th>
+            <th>Descripcion</th>
             <td><?= h($treatment->description) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Payment Type') ?></th>
-            <td><?= h($treatment->payment_type) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
+            <th>Id</th>
             <td><?= $this->Number->format($treatment->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Total Cost') ?></th>
+            <th>Costo total</th>
             <td><?= $this->Number->format($treatment->total_cost) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Created') ?></th>
+            <th>Creado</th>
             <td><?= h($treatment->created) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Modified') ?></th>
+            <th>Modificado</th>
             <td><?= h($treatment->modified) ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Consultations') ?></h4>
-        <?php if (!empty($treatment->consultations)): ?>
-        <table cellpadding="0" cellspacing="0">
+</div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container-fluid">
+<div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header"><h3>Detalles de consultas</h3></div>
+        </div>
+          <div class="card-body">
+            <?php if (!empty($treatment->consultations)): ?>
+          <table class="table table-responsive table-striped table-sm">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Diagnosis') ?></th>
                 <th scope="col"><?= __('Detail') ?></th>
                 <th scope="col"><?= __('Active') ?></th>
+                <th scope="col"><?= __('Payment Type') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -71,6 +73,7 @@
                 <td><?= h($consultations->diagnosis) ?></td>
                 <td><?= h($consultations->detail) ?></td>
                 <td><?= h($consultations->active) ?></td>
+                <td><?= h($consultations->payment_type) ?></td>
                 <td><?= h($consultations->created) ?></td>
                 <td><?= h($consultations->modified) ?></td>
                 <td><?= h($consultations->user_id) ?></td>
@@ -86,17 +89,28 @@
         </table>
         <?php endif; ?>
     </div>
-    <div class="related">
-        <h4><?= __('Related Recipes') ?></h4>
-        <?php if (!empty($treatment->recipes)): ?>
-        <table cellpadding="0" cellspacing="0">
+          </div>
+        </div>
+    </div>
+    </div>
+
+ <div class="container-fluid">         
+    <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header"><h3>Detalles de recetas medicas</h3></div>
+        </div>
+          <div class="card-body">
+          <?php if (!empty($treatment->recipes)): ?>
+          <table class="table table-responsive table-striped table-sm">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Detail') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
-                <th scope="col"><?= __('Treatment Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th>Id</th>
+                <th>Detalle</th>
+                <th>Creado</th>
+                <th>Modificado</th>
+                <th>Id tratamiento</th>
+                <th>Acciones</th>
             </tr>
             <?php foreach ($treatment->recipes as $recipes): ?>
             <tr>
@@ -115,4 +129,9 @@
         </table>
         <?php endif; ?>
     </div>
-</div>
+          </div>
+        </div>
+    </div>
+    </div>
+      
+

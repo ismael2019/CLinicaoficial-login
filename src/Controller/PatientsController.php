@@ -36,6 +36,7 @@ class PatientsController extends AppController
      */
     public function view($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $patient = $this->Patients->get($id, [
             'contain' => ['Consultations']
         ]);
@@ -75,6 +76,7 @@ class PatientsController extends AppController
      */
     public function edit($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $patient = $this->Patients->get($id, [
             'contain' => []
         ]);

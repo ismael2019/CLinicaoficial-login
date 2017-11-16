@@ -4,201 +4,251 @@
  * @var \App\Model\Entity\Patient $patient
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Patient'), ['action' => 'edit', $patient->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Patient'), ['action' => 'delete', $patient->id], ['confirm' => __('Are you sure you want to delete # {0}?', $patient->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Patients'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Patient'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Consultations'), ['controller' => 'Consultations', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Consultation'), ['controller' => 'Consultations', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="patients view large-9 medium-8 columns content">
-    <h3><?= h($patient->id) ?></h3>
-    <table class="vertical-table">
+<div class="container-fluid">
+     
+      <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+                    <div class="card-header"><h3>Datos del Paciente: <?= h($patient->full_name) ?></h3></div>
+                </div>
+          <div class="card-body">
+    
+                
+    <table class="table table-responsive table-striped table-sm" id="tabla">
         <tr>
-            <th scope="row"><?= __('Full Name') ?></th>
-            <td><?= h($patient->full_name) ?></td>
+             <th>Nombre Completo: </th>
+             <td><?= h($patient->full_name) ?></td>
+        </tr>
+            
+        <tr>
+             <th>C.I:</th>
+             <td><?= h($patient->ci) ?></td>
+        </tr>
+         <tr>
+             <th>Correo Electronico</th>
+             <td><?= h($patient->email) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Ci') ?></th>
-            <td><?= h($patient->ci) ?></td>
+            <th>Genero</th>
+            <td><?php if ($patient->gender==='male'){
+                        echo "Hombre";
+                    }else{
+                        echo "Mujer";
+                    }
+                ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($patient->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Gender') ?></th>
-            <td><?= h($patient->gender) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Address') ?></th>
+            <th>Direccion</th>
             <td><?= h($patient->address) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Phone') ?></th>
+            <th>Telefono</th>
             <td><?= h($patient->phone) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
+            <th>Id</th>
             <td><?= $this->Number->format($patient->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Age') ?></th>
+            <th>Edad</th>
             <td><?= $this->Number->format($patient->age) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Created') ?></th>
+            <th>Creado</th>
             <td><?= h($patient->created) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Modified') ?></th>
+            <th>Modificado</th>
             <td><?= h($patient->modified) ?></td>
         </tr>
+        </table>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+<div class="container-fluid">
+     
+      <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header" id="tituloproblemas"><h3>Problemas que presenta el paciente:</h3></div>
+        </div>
+          <div class="card-body">
+        <table id="cuerpoproblemas" class="table table-responsive table-striped table-sm">
+        
         <tr>
-            <th scope="row"><?= __('Heart Problems') ?></th>
-            <td><?= $patient->heart_problems ? __('Yes') : __('No'); ?></td>
+            <th>Problemas del Corazon</th>
+            <td><?= $patient->heart_problems ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('High Blood Pressure') ?></th>
-            <td><?= $patient->high_blood_pressure ? __('Yes') : __('No'); ?></td>
+            <th>Presion arterial alta</th>
+            <td><?= $patient->high_blood_pressure ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Circulatory Problems') ?></th>
-            <td><?= $patient->circulatory_problems ? __('Yes') : __('No'); ?></td>
+            <th>Problemas circulatorios</th>
+            <td><?= $patient->circulatory_problems ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Nervous Problems') ?></th>
-            <td><?= $patient->nervous_problems ? __('Yes') : __('No'); ?></td>
+            <th>Problemas Nerviosos</th>
+            <td><?= $patient->nervous_problems ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Radiotherapy') ?></th>
-            <td><?= $patient->radiotherapy ? __('Yes') : __('No'); ?></td>
+            <th>Radio Terapia</th>
+            <td><?= $patient->radiotherapy ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Artificial Heart Valves') ?></th>
-            <td><?= $patient->artificial_heart_valves ? __('Yes') : __('No'); ?></td>
+            <th>Valvulas artificiales en el corazon</th>
+            <td><?= $patient->artificial_heart_valves ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Weightloss') ?></th>
-            <td><?= $patient->weightloss ? __('Yes') : __('No'); ?></td>
+            <th>Perdida de peso</th>
+            <td><?= $patient->weightloss ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Back Problems') ?></th>
-            <td><?= $patient->back_problems ? __('Yes') : __('No'); ?></td>
+            <th>Problemas de espalda</th>
+            <td><?= $patient->back_problems ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Respiratory Diseases') ?></th>
-            <td><?= $patient->respiratory_diseases ? __('Yes') : __('No'); ?></td>
+            <th>Enfermedades respiratorias</th>
+            <td><?= $patient->respiratory_diseases ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Diabetes') ?></th>
-            <td><?= $patient->diabetes ? __('Yes') : __('No'); ?></td>
+            <th>Diabetes</th>
+            <td><?= $patient->diabetes ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Low Blood Pressure') ?></th>
-            <td><?= $patient->low_blood_pressure ? __('Yes') : __('No'); ?></td>
+            <th>Presion arterial baja</th>
+            <td><?= $patient->low_blood_pressure ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Epilepsy') ?></th>
-            <td><?= $patient->epilepsy ? __('Yes') : __('No'); ?></td>
+            <th>Epilepsia</th>
+            <td><?= $patient->epilepsy ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Hepatitis') ?></th>
-            <td><?= $patient->hepatitis ? __('Yes') : __('No'); ?></td>
+            <th>Hepatitis</th>
+            <td><?= $patient->hepatitis ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Cancer') ?></th>
-            <td><?= $patient->cancer ? __('Yes') : __('No'); ?></td>
+            <th>Cancer</th>
+            <td><?= $patient->cancer ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Psychiatric Treatment') ?></th>
-            <td><?= $patient->psychiatric_treatment ? __('Yes') : __('No'); ?></td>
+            <th>Tratamiento Psiquiatrico</th>
+            <td><?= $patient->psychiatric_treatment ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Special Diet') ?></th>
-            <td><?= $patient->special_diet ? __('Yes') : __('No'); ?></td>
+            <th>Dieta Especial</th>
+            <td><?= $patient->special_diet ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Diseases Of The Blood') ?></th>
-            <td><?= $patient->diseases_of_the_blood ? __('Yes') : __('No'); ?></td>
+            <th>Enfermedades en la sangre</th>
+            <td><?= $patient->diseases_of_the_blood ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Arthritis') ?></th>
-            <td><?= $patient->arthritis ? __('Yes') : __('No'); ?></td>
+            <th>Artitris</th>
+            <td><?= $patient->arthritis ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Swollen Neck Glands') ?></th>
-            <td><?= $patient->swollen_neck_glands ? __('Yes') : __('No'); ?></td>
+            <th>Glandulas del cuello hinchada</th>
+            <td><?= $patient->swollen_neck_glands ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Rheumatic Fever') ?></th>
-            <td><?= $patient->rheumatic_fever ? __('Yes') : __('No'); ?></td>
+            <th>Fiebre Reumatica</th>
+            <td><?= $patient->rheumatic_fever ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Vih') ?></th>
-            <td><?= $patient->vih ? __('Yes') : __('No'); ?></td>
+            <th>Vih</th>
+            <td><?= $patient->vih ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Cerebral Embolism') ?></th>
-            <td><?= $patient->cerebral_embolism ? __('Yes') : __('No'); ?></td>
+            <th>Embolia cerebral</th>
+            <td><?= $patient->cerebral_embolism ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Ulcers') ?></th>
-            <td><?= $patient->ulcers ? __('Yes') : __('No'); ?></td>
+            <th>Ulceras</th>
+            <td><?= $patient->ulcers ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Venereal Diseases') ?></th>
-            <td><?= $patient->venereal_diseases ? __('Yes') : __('No'); ?></td>
+            <th>Enfermedades veneras</th>
+            <td><?= $patient->venereal_diseases ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Hemophilia') ?></th>
-            <td><?= $patient->hemophilia ? __('Yes') : __('No'); ?></td>
+            <th>Hemofilia</th>
+            <td><?= $patient->hemophilia ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Osteoporosis') ?></th>
-            <td><?= $patient->osteoporosis ? __('Yes') : __('No'); ?></td>
+            <th>Osteoporosis</th>
+            <td><?= $patient->osteoporosis ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Liver Diseases') ?></th>
+            <th>Enfermedades hepatiticas</th>
             <td><?= $patient->liver_diseases ? __('Yes') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Chronic Diarrhea') ?></th>
-            <td><?= $patient->chronic_diarrhea ? __('Yes') : __('No'); ?></td>
+            <th>Diarrea cronica</th>
+            <td><?= $patient->chronic_diarrhea ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Drug Addiction') ?></th>
-            <td><?= $patient->drug_addiction ? __('Yes') : __('No'); ?></td>
+            <th>Drogadiccion</th>
+            <td><?= $patient->drug_addiction ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Allergies To Anesthetics') ?></th>
-            <td><?= $patient->allergies_to_anesthetics ? __('Yes') : __('No'); ?></td>
+            <th>Alergias a anestecias</th>
+            <td><?= $patient->allergies_to_anesthetics ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Allergies To Medicines') ?></th>
-            <td><?= $patient->allergies_to_medicines ? __('Yes') : __('No'); ?></td>
+            <th>Alergias a medicinas</th>
+            <td><?= $patient->allergies_to_medicines ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Allergies To General') ?></th>
-            <td><?= $patient->allergies_to_general ? __('Yes') : __('No'); ?></td>
+            <th>Allergies generales</th>
+            <td><?= $patient->allergies_to_general ? __('Si') : __('No'); ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Others') ?></th>
-            <td><?= $patient->others ? __('Yes') : __('No'); ?></td>
+            <th>Otros</th>
+            <td><?= $patient->others ? __('Si') : __('No'); ?></td>
         </tr>
+       </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+     
+      <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header" id="tituloestado"><h3>Estado del paciente:</h3></div>
+        </div>
+          <div class="card-body" >
+        <table id="cuerpoestado" class="table table-responsive table-striped table-sm">
         <tr>
-            <th scope="row"><?= __('Active') ?></th>
-            <td><?= $patient->active ? __('Yes') : __('No'); ?></td>
+            <th>Activo</th>
+            <td><?= $patient->active ? __('Si') : __('No'); ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Consultations') ?></h4>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="container-fluid">
+     
+      <div class="row">
+        <div class="col-12">
+        <div class="card border-info mb-3 ">
+         <div class="card text-white bg-info mb-3">
+              <div class="card-header"><h3>Problemas que presenta el paciente:</h3></div>
+        </div>
+          <div class="card-body">
         <?php if (!empty($patient->consultations)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table table-responsive table-striped table-sm">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Diagnosis') ?></th>
@@ -230,6 +280,13 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <?php endif; ?>
+         <?php endif; ?>
     </div>
-</div>
+    </div>
+    </div>
+    </div>
+        
+   
+               
+            
+
