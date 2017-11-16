@@ -26,27 +26,18 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="imagen navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
-            <i class="fa fa-address-card" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Lista de Usuarios</span>
+          <a>
+            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-address-card" aria-hidden="true"></i> Lista de Usuarios', ['controller' => 'Users', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fa fa-stethoscope" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Lista de Pacientes</span>
+          <a>
+            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-stethoscope" aria-hidden="true"></i> Lista de Pacientes', ['controller' => 'Patients', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fa fa-list-ol" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Lista de Historiales Clinicos</span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
-            <i class="fa fa-list-ol" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Lista de Recetas Medicas</span>
+          <a>
+            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-list-ol" aria-hidden="true"></i> Lista de Recetas Medicas', ['controller' => 'Recipes', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -56,7 +47,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
-              <a href="navbar.html">Agregar nuevo paciente</a>
+              <?= $this->Html->link('Registrar nuevo paciente', ['controller' => 'Patients', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
           </ul>
         </li>
@@ -67,13 +58,14 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Agregar nuevo tratamiento</a>
+              <?= $this->Html->link('Agregar nuevo tratamiento', ['controller' => 'Treatments', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
             <li>
-              <a href="register.html">Lista de tratamientos</a>
+              <?= $this->Html->link('Lista de Tratamientos', ['controller' => 'Treatments', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
           </ul>
         </li>
+        <!--
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-sitemap"></i>
@@ -110,12 +102,12 @@
             <i class="fa fa-fw fa-link"></i>
             <span class="nav-link-text">Link</span>
           </a>
-        </li>
+        </li> -->
       </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
-          <a class="nav-link text-center" id="sidenavToggler">
-            <i class="fa fa-fw fa-angle-left"></i>
+          <a class="nav-link text-center" id="fondito">
+            <i class="fa fa-heartbeat fa-2x" aria-hidden="true"></i>
           </a>
         </li>
       </ul>

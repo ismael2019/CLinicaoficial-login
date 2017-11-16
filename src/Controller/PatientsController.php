@@ -20,6 +20,7 @@ class PatientsController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->layout('admin');
         $patients = $this->paginate($this->Patients);
 
         $this->set(compact('patients'));
@@ -50,6 +51,7 @@ class PatientsController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->layout('admin');
         $patient = $this->Patients->newEntity();
         if ($this->request->is('post')) {
             $patient = $this->Patients->patchEntity($patient, $this->request->getData());

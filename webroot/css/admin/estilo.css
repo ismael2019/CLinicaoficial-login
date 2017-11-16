@@ -42,15 +42,11 @@
 #pieletra{
   color: #FFFFFF;
 }
-#sidenavToggler{
+#fondito{
   background: #000000;
-  border: 1px solid #14F7FF;
-  border-radius: 5px;
-}
-#sidenavToggler:hover{
-  background: #828282;
 
 }
+
 
 .imagen{
   background: #000000;
@@ -64,4 +60,22 @@
 #boton:hover{
   background: #14F7FF;
 }
-
+#titulo{
+  background: #00B8CC;
+  color:#000000;
+}
+#cuerpo{
+  background: #09CCC6;
+}
+#tarjeta{
+  width: 150%;
+}
+#selecciones{
+  width: 150%;
+}
+#tituloSelec{
+  background: #E9D220;
+}
+#contenido{
+  background: #09CCC6;
+}
