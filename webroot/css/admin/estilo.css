@@ -95,6 +95,10 @@
 #tituloestado{
   background: #03C200;
 }
-#cuerpoestado{
+#cuerpoestado{                                           -
   background: #4FFF4D;
 }
+#cuerpousuarios{
+  background: #CC0000;
+}
+

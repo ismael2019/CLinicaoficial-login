@@ -19,49 +19,65 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Clinica Dental</a>
+    <a class="navbar-brand" id="clinica">Clinica Dental</a>
     <button id="boton" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="fa fa-bars" aria-hidden="true"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="imagen navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a>
-            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-address-card" aria-hidden="true"></i> Lista de Usuarios', ['controller' => 'Users', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages1">
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Menu Usuarios</span>
           </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a>
-            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-stethoscope" aria-hidden="true"></i> Lista de Pacientes', ['controller' => 'Patients', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a>
-            <span class="nav-link-text" id="texto"><?= $this->Html->link('<i class="fa fa-list-ol" aria-hidden="true"></i> Lista de Recetas Medicas', ['controller' => 'Recipes', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?></span>
-          </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-            <i class="fa fa-wheelchair" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Pacientes</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents">
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages1">
             <li>
-              <?= $this->Html->link('Registrar nuevo paciente', ['controller' => 'Patients', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
+              <?= $this->Html->link('<i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Usuario', ['controller' => 'Users', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
+            </li>
+            <li>
+              <?= $this->Html->link('<i class="fa fa-list-ol" aria-hidden="true"></i> Lista de Usuarios', ['controller' => 'Users', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-heartbeat" aria-hidden="true"></i>
-            <span class="nav-link-text" id="texto">Tratamientos</span>
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages2" data-parent="#exampleAccordion">
+             <i class="fa fa-user" aria-hidden="true"></i>
+             <span class="nav-link-text" id="texto">Menu pacientes</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages2">
             <li>
-              <?= $this->Html->link('Agregar nuevo tratamiento', ['controller' => 'Treatments', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
+             <?= $this->Html->link('<i class="fa fa-plus-square" aria-hidden="true"></i> Registrar paciente', ['controller' => 'Patients', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
             <li>
-              <?= $this->Html->link('Lista de Tratamientos', ['controller' => 'Treatments', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
+             <?= $this->Html->link('<i class="fa fa-list-ol" aria-hidden="true"></i> Lista de Pacientes', ['controller' => 'Patients', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages3" data-parent="#exampleAccordion">
+             <i class="fa fa-file-text" aria-hidden="true"></i>
+             <span class="nav-link-text" id="texto">Menu recetas medicas</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages3">
+            <li>
+             <?= $this->Html->link('<i class="fa fa-plus-square" aria-hidden="true"></i> Agregar receta medica', ['controller' => 'Recipes', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
+            </li>
+            <li>
+             <?= $this->Html->link('<i class="fa fa-list-ol" aria-hidden="true"></i> Lista de recetas medicas', ['controller' => 'Recipes', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages4" data-parent="#exampleAccordion">
+             <i class="fa fa-heartbeat" aria-hidden="true"></i>
+            <span class="nav-link-text" id="texto">Tratamientos</span>
+          </a>
+          <ul class="sidenav-second-level collapse" id="collapseExamplePages4">
+            <li>
+            <?= $this->Html->link('<i class="fa fa-plus-square" aria-hidden="true"></i> Agregar nuevo tratamiento', ['controller' => 'Treatments', 'action' => 'add'], ['class'=>'nav-link','escape' => false]) ?>
+            </li>
+            <li>
+             <?= $this->Html->link('<i class="fa fa-plus-square" aria-hidden="true"></i> Lista de tratamientos', ['controller' => 'Treatments', 'action' => 'index'], ['class'=>'nav-link','escape' => false]) ?>
             </li>
           </ul>
         </li>

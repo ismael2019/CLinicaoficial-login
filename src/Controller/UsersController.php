@@ -19,7 +19,7 @@ class UsersController extends AppController
      * @return \Cake\Http\Response|void
      */
        public $paginate = [
-       'limit' => 5
+       'limit' => 2
     ];
     public function beforeFilter(Event $event)
     {

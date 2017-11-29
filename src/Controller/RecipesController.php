@@ -20,6 +20,7 @@ class RecipesController extends AppController
      */
     public function index()
     {
+        $this->viewBuilder()->layout('admin');
         $this->paginate = [
             'contain' => ['Treatments']
         ];
@@ -38,6 +39,7 @@ class RecipesController extends AppController
      */
     public function view($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $recipe = $this->Recipes->get($id, [
             'contain' => ['Treatments']
         ]);
@@ -53,6 +55,7 @@ class RecipesController extends AppController
      */
     public function add()
     {
+        $this->viewBuilder()->layout('admin');
         $recipe = $this->Recipes->newEntity();
         if ($this->request->is('post')) {
             $recipe = $this->Recipes->patchEntity($recipe, $this->request->getData());
@@ -77,6 +80,7 @@ class RecipesController extends AppController
      */
     public function edit($id = null)
     {
+        $this->viewBuilder()->layout('admin');
         $recipe = $this->Recipes->get($id, [
             'contain' => []
         ]);

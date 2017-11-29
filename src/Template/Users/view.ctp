@@ -10,7 +10,7 @@
         <table class="table table-responsive table-striped table-sm">
          <tr>
            <th>Foto</th>
-           <td><?=$this->Html->image('../files/users/photo/' . $user->photo_dir . '/' . $user->photo,['class'=>'img-fluid']); ?></td>
+           <td><?=$this->Html->image('../files/users/photo/' . $user->photo_dir . '/' . $user->photo,['class'=>'img-fluid','width'=>'20%','height'=>'20%']); ?></td>
         </tr>
         <tr>
             <th>Nombre completo</th>
@@ -90,4 +90,8 @@
         </table>
         <?php endif; ?>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>

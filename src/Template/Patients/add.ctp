@@ -345,11 +345,7 @@
                 
 
                     <center><?= $this->Form->button('Registrar', ['class' => 'btn btn-info']) ?></center>
-                    <br>
-
-
-
-                <?= $this->Form->end() ?>
+                   <?= $this->Form->end() ?>
                           
         </div>
       </div>
